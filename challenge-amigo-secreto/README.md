@@ -18,7 +18,7 @@
 - ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white)
 - ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-🚀 Cómo Usar la Aplicación
+## 🚀 Cómo Usar la Aplicación
 1. Agregar Participantes
 - Escribe el nombre en el campo de texto
 - Presiona Enter o haz clic en el botón "Añadir"
@@ -30,7 +30,7 @@
 - ¡El nombre del ganador aparecerá en pantalla!
 
 ## 📜 Funciones Principales (script.js)
-
+```javascript
 let amigosAgregados = []; // Almacena los participantes
 
 function agregarAmigo() {
@@ -44,5 +44,6 @@ function enlistarAmigos() {
 function sortearAmigo() {
     // Selecciona y muestra un ganador aleatorio
 }
+```
 
 🎉 **¡Diviértete organizando tu juego de Amigo Secreto!** 🎉
