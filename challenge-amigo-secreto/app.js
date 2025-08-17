@@ -1,7 +1,6 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 //Variable que almacenara los nombres
 let amigosAgregados = [];
-console.log(amigosAgregados);
 
 function agregarAmigo(){
     //Obtener el nombre ingresado por el usuario
@@ -14,11 +13,12 @@ function agregarAmigo(){
     } else {
         amigosAgregados.push(validacionCaptura);
         //Ejecutar la función actualizar la lista
-        enlistarAmigos(); 
+        enlistarAmigos();
+        //Limpiar el campo de entrada
+        capturaDelNombre.value = ""; 
+        
     }
-    //Limpiar el campo de entrada
-    capturaDelNombre.value = "";
-    console.log(amigosAgregados);
+
 }
 
 function enlistarAmigos(){
@@ -38,12 +38,25 @@ function enlistarAmigos(){
     
 }
 
+function sortearAmigo(){
+    //Comprobar que el array no este vacio
+    if (amigosAgregados.length === 0){
+        console.log('No hay nombres agregados para sortear');
+        return;
+    }
+    //Generar un indice aleatorio
+    const indiceAleatorio = Math.floor(Math.random()* amigosAgregados.length);
+    //Obtener el nombre sorteado
+    const amigoSorteado = amigosAgregados[indiceAleatorio];
+    //Mostrar el resultado
+    const mostrarSorteo = document.getElementById("resultado");
+    mostrarSorteo.innerHTML = `¡El amigo sorteado es ${amigoSorteado}!`
 
-
-
-
-
-
-function limpiarCampo (){
-    document.getElementById('amigo').value = '';
 }
+
+// Escucha el evento keypress en el input
+document.getElementById("amigo").addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        agregarAmigo();
+    }
+});
